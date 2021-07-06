@@ -1,0 +1,17 @@
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import {View } from 'react-native';
+import SearchInput from './components/SearchInput';
+import {styles} from './styles/app.style';
+
+export default function App() {
+
+  return (
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <SearchInput></SearchInput>
+    </View>
+  );
+}
+
+
