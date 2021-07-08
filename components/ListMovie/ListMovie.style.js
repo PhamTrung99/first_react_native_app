@@ -2,11 +2,14 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     view_list_movie: {
-        flexDirection: "row",
-        backgroundColor: "skyblue"
+        flexDirection: "column",
+        //backgroundColor: "black",
+        flex:11.6
     },
-    view_single_movie: {
-        padding: 4,
+
+    flex_direc_row: {
+        flexDirection: "row",
+        flex: 3,
        
-    }
+    }, 
 })

@@ -1,36 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { styles } from './ListMovie.style'
-import { View, ActivityIndicator, Text } from 'react-native'
-import { Image } from 'react-native-elements'
+import { View, ScrollView, Text } from 'react-native'
 import axios from 'axios'
 import { testData } from '../../stores/movies.context'
-import { IMG_HOST } from '@env'
+import SingleMovie from '../SingleMovie/SingleMovie'
+import { API_KEY, HOST } from '@env'
+import { LinearProgress } from 'react-native-elements';
 
 
 
 export default function ListMovie() {
-    const listMovies = async () => {
-        return await axios.get(`${HOST}/movie/upcoming`, {
 
-        })
-    }
+    const [listMovies, setlistMovies] = useState({});
+    const [isLoading, setLoading] = useState(true);
 
+    useEffect(function () {
+        axios.get(`${HOST}/movie/upcoming`, {
+            params: {
+                api_key: API_KEY
+            }
+        }).then(res => setlistMovies(res.data))
+            .then(() => setLoading(false))
+    }, [])
 
     return (
         <View style={styles.view_list_movie}>
-            {
-                testData.results.map(item =>
-                    <View key={item.id} style={styles.view_single_movie}>
-                        <Image
-                            //source={{ uri: `${IMG_HOST}${item.poster_path}` }}
-                            source={{ uri: `${IMG_HOST}/qIicLxr7B7gIt5hxZxo423BJLlK.jpg` }}
-                            style={{ width: 100, height: 100 }}
-                            PlaceholderContent={<ActivityIndicator />}
-                        />
-                    </View>
-                )
-
-            }
+            {isLoading ? <LinearProgress color="primary" /> :
+                <ScrollView >
+                    {
+                        listMovies.results.map((item, index, element) =>
+                            index % 3 == 0 && <View key={item.id} style={styles.flex_direc_row}>
+                                <SingleMovie item={element[index]} index={index}></SingleMovie>
+                                {element[index + 1] && <SingleMovie item={element[index + 1]} index={index + 1}></SingleMovie>}
+                                {element[index + 2] && <SingleMovie item={element[index + 2]} index={index + 2}></SingleMovie>}
+                            </View>
+                        )
+                    }
+                </ScrollView>}
         </View>
     )
 };

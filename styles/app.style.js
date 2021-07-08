@@ -2,8 +2,13 @@ import { StyleSheet } from "react-native"
 
 export const styles = StyleSheet.create({
     container:{
-        paddingTop: 30,
         flexDirection: "column",
-        flex: 1
-    }
+        backgroundColor: "black"
+    },
+    view_header: {
+        //backgroundColor: 'violet'
+    },
+    view_list_movie: {
+        //backgroundColor: '#E0FFFF'
+    },
 })
