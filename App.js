@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { View } from 'react-native';
 import SearchInput from './components/SearchInput/SearchInput';
@@ -13,12 +12,16 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <View style={styles.container}>
-        <AppHeader></AppHeader>
-        <View>
-          <StatusBar style="auto" />
+      <View style={[styles.container, {flex: 14}]}>
+        <View style={[styles.view_header, {flex: 1.4}]}>
+          <AppHeader></AppHeader>
         </View>
-        <ListMovie></ListMovie>
+        <View style={[styles.view_list_movie, {flex: 11.6}]}>
+          <ListMovie></ListMovie>
+        </View>
+        <View style={[{flex: 1}]}>
+
+        </View>
       </View>
     </SafeAreaProvider>
   );
