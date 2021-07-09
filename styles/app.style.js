@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     view_header: {
         //backgroundColor: 'violet'
     },
-    view_list_movie: {
-        //backgroundColor: '#E0FFFF'
+    view_middle: {
+        backgroundColor: 'black'
     },
 })

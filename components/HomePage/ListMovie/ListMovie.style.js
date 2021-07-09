@@ -10,6 +10,6 @@ export const styles = StyleSheet.create({
     flex_direc_row: {
         flexDirection: "row",
         flex: 3,
-       
+        paddingTop: 17
     }, 
 })

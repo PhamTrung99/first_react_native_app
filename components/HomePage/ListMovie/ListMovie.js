@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { styles } from './ListMovie.style'
 import { View, ScrollView, Text } from 'react-native'
 import axios from 'axios'
-import { testData } from '../../stores/movies.context'
 import SingleMovie from '../SingleMovie/SingleMovie'
 import { API_KEY, HOST } from '@env'
 import { LinearProgress } from 'react-native-elements';

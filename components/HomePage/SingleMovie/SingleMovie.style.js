@@ -5,10 +5,12 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     text_sg_mv: {
-        color: "white"
+        color: "white",
+        fontSize: 14
     },
     _img: {
         width: 125,
-        height: 140
+        height: 145,
+        borderRadius: 10
     }
 })
