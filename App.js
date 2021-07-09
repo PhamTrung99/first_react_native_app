@@ -1,15 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View,useColorScheme, Text } from 'react-native';
 import { styles } from './styles/app.style';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomePage from './components/HomePage/HomePage/HomePage';
 import AppHeader from './components/AppHeader/AppHeader';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import PersonalPage from './components/PersonalPage/PersonnalPage/PersonalPage';
-import { DefaultTheme, DarkTheme } from '@react-navigation/native';
+import TvShowPage from './components/TvshowPage/TvShowPage/TvShowPage';
+import MoviePage from './components/MoviePage/MoviePage/MoviePage';
+import HomePage from './components/HomePage/HomePage/HomePage';
+
+
+
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -25,7 +29,7 @@ export default function App() {
           <AppHeader></AppHeader>
         </View>
         <View style={[styles.view_middle, { flex: 12.6 }]}>
-          <NavigationContainer >
+          <NavigationContainer theme={DarkTheme}>
             <BottomTab.Navigator
               initialRouteName="HomePage"
               tabBarOptions={{
@@ -40,8 +44,27 @@ export default function App() {
               options={{
                 title: "Home",
                 tabBarIcon: ({focused}) => {
-                  let iconName = focused ? "home" : "home-outline"
-                  return <MaterialCommunityIcons name={iconName}  color="white" size={30} />
+                  let iconName = focused ? "home-automation" : "home-outline"
+                  return <MaterialCommunityIcons name={iconName}  color="white" size={28} />
+                },
+              }}/>
+              
+                    <BottomTab.Screen 
+              name="MoviePage" component={MoviePage} 
+              options={{
+                title: "Movies",
+                tabBarIcon: ({focused}) => {
+                  let iconName = focused ? "movie" : "movie-open-outline"
+                  return <MaterialCommunityIcons name={iconName} color="white" size={28} />
+                },
+              }}/>
+                    <BottomTab.Screen 
+              name="TvShowPage" component={TvShowPage} 
+              options={{
+                title: "TV Shows",
+                tabBarIcon: ({focused}) => {
+                  let iconName = focused ? "television-pause" : "television-play"
+                  return <MaterialCommunityIcons name={iconName} color="white" size={28} />
                 },
               }}/>
                  <BottomTab.Screen 
@@ -49,8 +72,8 @@ export default function App() {
               options={{
                 title: "Profile",
                 tabBarIcon: ({focused}) => {
-                  let iconName = focused ? "account-box" : "account-box-outline"
-                  return <MaterialCommunityIcons name={iconName} color="white" size={30} />
+                  let iconName = focused ? "account-group" : "account"
+                  return <MaterialCommunityIcons name={iconName} color="white" size={28} />
                 },
               }}/>
             </BottomTab.Navigator>

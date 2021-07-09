@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text } from 'react-native'
 
-export default function HomePage() {
+export default function TvShowPage() {
     return(
-        <Text>HomePage</Text>
+        <Text>TV shows page</Text> 
     )
 };
