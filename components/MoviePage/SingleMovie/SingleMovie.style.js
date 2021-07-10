@@ -5,8 +5,12 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     text_sg_mv: {
-        color: "white",
-        fontSize: 14
+        color: "whitesmoke",
+        fontSize: 13,
+        textAlign: "center",
+        width: 100,
+        overflow: "visible",
+        height: 20
     },
     _img: {
         width: 125,
