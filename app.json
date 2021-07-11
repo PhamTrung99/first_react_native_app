@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "first_react_native_app",
-    "slug": "first_react_native_app",
+    "name": "Cinemi",
     "version": "1.0.0",
+    "slug": "Cinemi",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Logo_Cinemi_New.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Cinemi_Panel.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,9 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/Logo_Cinemi_New.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "phamtrung99.cinemi.exponent"
     },
     "web": {
       "favicon": "./assets/favicon.png"

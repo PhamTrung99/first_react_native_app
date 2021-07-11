@@ -3,9 +3,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import PersonalPage from '../components/PersonalPage/PersonnalPage/PersonalPage';
 import TvShowPage from '../components/TvshowPage/TvShowPage/TvShowPage';
 import MoviePage from '../components/MoviePage/MoviePage/MoviePage';
-import HomePage from '../components/HomePage/HomePage/HomePage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchPage from '../components/SearchPage/SearchPage';
+import HomeStack from '../components/HomePage/HomeStack';
 
 
 
@@ -29,7 +29,7 @@ export default function BottomTabNaviga({ isDrawerOpen }) {
 
     >
       <BottomTab.Screen
-        name="HomePage" component={HomePage}
+        name="HomeStack" component={HomeStack}
         options={{
           title: "Home",
           tabBarIcon: ({ focused }) => {
@@ -53,7 +53,7 @@ export default function BottomTabNaviga({ isDrawerOpen }) {
         options={{
           title: "Search",
           tabBarIcon: ({ focused }) => {
-            let iconName = focused ? "magnify" : "magnify-plus"
+            let iconName = focused ? "magnify-plus" : "magnify"
             return <MaterialCommunityIcons name={iconName} color={styleIcon.color} size={styleIcon.size} />
           },
         }} />

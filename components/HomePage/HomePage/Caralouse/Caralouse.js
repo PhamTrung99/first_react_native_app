@@ -27,8 +27,14 @@ export default function Caralouse(props) {
                 <ScrollView horizontal={true}>
                     {
                         listMovies.results.map((item, index) =>
-                           <View key={item.id} style={styles.flex_direc_row}>
-                                <SingleMovie item={item} index={index} isText={props.isText}></SingleMovie>
+                            <View key={item.id} style={styles.flex_direc_row}>
+                                <SingleMovie
+                                    item={item}
+                                    index={index}
+                                    isText={props.isText}
+                                    itemName={props.itemName}>
+
+                                </SingleMovie>
                             </View>
                         )
                     }

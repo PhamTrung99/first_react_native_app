@@ -4,12 +4,15 @@ import { IMG_HOST } from '@env'
 import { View, Text, ActivityIndicator } from 'react-native'
 import { Image } from 'react-native-elements'
 
-export default function SingleMovie({ item, index, isText }) {
+export default function SingleMovie({ item, index, isText, itemName }) {
+
+    const uriMovie = `${IMG_HOST}${item.poster_path}`
+    const uriActor = `${IMG_HOST}${item.profile_path}`
 
     return (
         <View style={[styles.view_single_movie]}>
             <Image
-                source={{ uri: `${IMG_HOST}${item.poster_path}` }}
+                source={{ uri: itemName === "movie" ? uriMovie : uriActor}}
                 style={styles._img}
                 PlaceholderContent={<ActivityIndicator />}
             />
