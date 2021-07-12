@@ -4,7 +4,7 @@ import { IMG_HOST } from '@env'
 import { View, Text, ActivityIndicator } from 'react-native'
 import { Image } from 'react-native-elements'
 
-export default function SingleMovie({ item, index, isText, itemName }) {
+export default function SingleMovie({ item, index, isText, itemName , content}) {
 
     const uriMovie = `${IMG_HOST}${item.poster_path}`
     const uriActor = `${IMG_HOST}${item.profile_path}`
@@ -17,8 +17,7 @@ export default function SingleMovie({ item, index, isText, itemName }) {
                 PlaceholderContent={<ActivityIndicator />}
             />
             {isText && <Text style={styles.text_sg_mv}>
-                {item.title||
-                    item.first_air_date.substring(0, 7)}
+                {item[`${content}`]}
             </Text>}
         </View>
     )

@@ -12,7 +12,7 @@ export default function PopularMovieScreen() {
     return(
         <>
         <Text>Popular movie</Text>
-       <ListMovie url={populalMovierUrl} page={page}> </ListMovie>
+       <ListMovie url={populalMovierUrl} page={page} isText={true} itemName={"movie"} content={"title"}> </ListMovie>
        </>
     )
 };

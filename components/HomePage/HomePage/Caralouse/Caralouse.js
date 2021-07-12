@@ -32,8 +32,8 @@ export default function Caralouse(props) {
                                     item={item}
                                     index={index}
                                     isText={props.isText}
-                                    itemName={props.itemName}>
-
+                                    itemName={props.itemName}
+                                    content={props.content} >           
                                 </SingleMovie>
                             </View>
                         )

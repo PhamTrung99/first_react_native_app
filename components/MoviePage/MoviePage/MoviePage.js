@@ -8,6 +8,6 @@ export default function MoviePage() {
     const page = 1
 
     return (
-            <ListMovie url={url} page={page}></ListMovie>
+            <ListMovie url={url} page={page} isText={true} itemName={"movie"} content={"title"}></ListMovie>
     )
 };

@@ -12,4 +12,8 @@ export const styles = StyleSheet.create({
         flex: 3,
         paddingTop: 17
     }, 
+    title_bnt_lm: {
+        color: "grey",
+        fontSize: 15
+    }
 })
