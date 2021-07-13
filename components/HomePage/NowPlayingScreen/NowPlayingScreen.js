@@ -2,7 +2,7 @@ import React from 'react'
 import {Text} from 'react-native'
 import ListMovie from '../../MoviePage/ListMovie/ListMovie'
 import {HOST} from '@env'
-
+import {styles} from '../HomePage/Caralouse/Caralouse.style'
 
 export default function LastestTvScreenNowPlayingScreen() {
 
@@ -11,7 +11,7 @@ export default function LastestTvScreenNowPlayingScreen() {
 
     return(
         <>
-        <Text>Now Playing Movies</Text>
+        <Text style={styles.label_text}>Now Playing Movies</Text>
        <ListMovie url={NowPlayingUrl} page={page} isText={true} itemName={"movie"} content={"title"}> </ListMovie>
        </>
     )

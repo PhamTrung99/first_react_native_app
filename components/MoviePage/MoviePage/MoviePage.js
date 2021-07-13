@@ -1,13 +1,34 @@
-import React from 'react'
-import ListMovie from '../ListMovie/ListMovie'
-import {HOST} from '@env'
+import React, { useState, useEffect } from 'react'
+import {  View } from 'react-native'
+import { HOST, API_KEY } from '@env'
+import { LinearProgress } from 'react-native-elements';
+import ListMenu from '../ListMenu/ListMenu';
+
+
 
 export default function MoviePage() {
+    const url = `${HOST}/genre/movie/list`
+    const [listGenres, setlistGenres] = useState([])
+    const [isGenresLoading, setisGenresLoading] = useState(true)
 
-    const url = `${HOST}/movie/upcoming`
-    const page = 1
+    useEffect(function () {
+        axios.get(url, {
+            params: {
+                api_key: API_KEY
+            }
+        }).then(res => setlistGenres(res.data.genres)
+        ).then(() => setisGenresLoading(false))
+    }, [])
 
     return (
-            <ListMovie url={url} page={page} isText={true} itemName={"movie"} content={"title"}></ListMovie>
+        <View>
+            {isGenresLoading ? <LinearProgress color="secondary" /> :
+                <ListMenu
+                    list={listGenres}
+                    listItemName={"name"}
+                    title="All Genres"
+                    iconName="menu"
+                />}
+        </View>
     )
 };

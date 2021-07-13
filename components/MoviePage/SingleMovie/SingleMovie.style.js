@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         width: 100,
         overflow: "visible",
-        height: 20
+        height: 30
     },
     _img: {
         width: 125,

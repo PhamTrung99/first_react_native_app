@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     flex_direc_row: {
         flexDirection: "row",
         flex: 3,
-        paddingTop: 17
+        paddingTop: 10
     }, 
     title_bnt_lm: {
         color: "grey",
