@@ -6,6 +6,7 @@ import MoviePage from '../components/MoviePage/MoviePage/MoviePage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchPage from '../components/SearchPage/SearchPage';
 import HomeStack from '../components/HomePage/HomeStack';
+import MoviePageStack from '../components/MoviePage/MoviePageStack';
 
 
 
@@ -39,7 +40,7 @@ export default function BottomTabNaviga({ isDrawerOpen }) {
         }} />
 
       <BottomTab.Screen
-        name="MoviePage" component={MoviePage}
+        name="MoviePageStack" component={MoviePageStack}
         options={{
           title: "Movies",
           tabBarIcon: ({ focused }) => {

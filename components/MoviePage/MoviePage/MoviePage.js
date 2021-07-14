@@ -6,7 +6,7 @@ import ListMenu from '../ListMenu/ListMenu';
 import axios from 'axios'
 
 
-export default function MoviePage() {
+export default function MoviePage({navigation}) {
     const url = `${HOST}/genre/movie/list`
     const [listGenres, setlistGenres] = useState([])
     const [isGenresLoading, setisGenresLoading] = useState(true)
@@ -34,6 +34,7 @@ export default function MoviePage() {
                     title="All Genres"
                     iconName="menu"
                     listIconName={listIconName}
+                    navigation = {navigation}
                 />}
         </ScrollView>
     )

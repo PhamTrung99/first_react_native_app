@@ -8,7 +8,7 @@ import { LinearProgress } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 
 
-export default function ListMovie({url,page, isText, itemName, content}) {
+export default function ListMovie({url, page, isText, itemName, content, genres_id}) {
 
     const [listMovies, setlistMovies] = useState([]);
     const [isLoading, setLoading] = useState(true);
@@ -20,7 +20,8 @@ export default function ListMovie({url,page, isText, itemName, content}) {
         axios.get(url, {
             params: {
                 api_key: API_KEY,
-                page: pageNumber
+                page: pageNumber,
+                with_genres: genres_id
             }
         }).then(res => {
             setlistMovies([...listMovies,...res.data.results])

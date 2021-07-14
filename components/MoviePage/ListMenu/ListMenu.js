@@ -15,7 +15,7 @@ export const ListItemContent = ({ iconName, title }) => {
     )
 }
 
-export default function ListMenu({ list, title, listItemName, listIconName}) {
+export default function ListMenu({ list, title, listItemName, listIconName, navigation}) {
 
     const [isExpanded, setisExpanded] = useState(false)
 
@@ -35,7 +35,7 @@ export default function ListMenu({ list, title, listItemName, listIconName}) {
             onPress={handlePressAccordion}
         >
             {list.map((l, i) => (
-                <CustomListItem key={i} title={l[`${listItemName}`]} iconName={listIconName[i]} />
+                <CustomListItem key={i} title={l[`${listItemName}`]} iconName={listIconName[i]} navigation={navigation} idGenres={l.id}/>
             ))}
         </ListItem.Accordion>
     )
