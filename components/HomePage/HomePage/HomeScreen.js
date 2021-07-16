@@ -16,24 +16,44 @@ export default function HomePage({ navigation }) {
     return (
         <ScrollView>
             <Text style={styles.label_text} onPress={() =>
-                navigation.navigate("PopularMovieScreen")
+                navigation.navigate("ListAllScreen",
+                    {
+                        url: populalMovierUrl,
+                        itemName:"movie",
+                        content:"title"
+                    })
             }>Popular Movies {`>>`} </Text>
-            <Caralouse url={populalMovierUrl} isText={true} itemName={"movie"} content={"title"}></Caralouse>
+            <Caralouse url={populalMovierUrl} isText={true} itemName={"movie"} content={"title"} navigation = {navigation}></Caralouse>
 
             <Text style={styles.label_text_2} onPress={() =>
-                navigation.navigate("NowPlayingScreen")
+                navigation.navigate("ListAllScreen",
+                {
+                    url: nowPlayingMovieUrl,
+                    itemName:"movie",
+                    content:"title"
+                })
             }>Now Playing {`>>`} </Text>
-            <Caralouse url={nowPlayingMovieUrl} isText={true} itemName={"movie"} content={"title"}></Caralouse>
+            <Caralouse url={nowPlayingMovieUrl} isText={true} itemName={"movie"} content={"title"} navigation = {navigation}></Caralouse>
 
             <Text style={styles.label_text_2} onPress={() =>
-                navigation.navigate("LastestTvScreen")
+                navigation.navigate("ListAllScreen",
+                {
+                    url: latestTvShowUrl,
+                    itemName:"movie",
+                    content:"first_air_date"
+                })
             }>Latest TV Shows {`>>`} </Text>
-            <Caralouse url={latestTvShowUrl} isText={true} itemName={"movie"} content={"first_air_date"}></Caralouse>
+            <Caralouse url={latestTvShowUrl} isText={true} itemName={"movie"} content={"first_air_date"} navigation = {navigation}></Caralouse>
 
             <Text style={styles.label_text_2} onPress={() =>
-                navigation.navigate("PopularActingScreen")
+                navigation.navigate("ListAllScreen",
+                {
+                    url: popularActorUrl,
+                    itemName:"actor",
+                    content:"name"
+                })
             }>Popular Acting {`>>`} </Text>
-            <Caralouse url={popularActorUrl} isText={true} itemName={"actor"} content={"name"}></Caralouse>
+            <Caralouse url={popularActorUrl} isText={true} itemName={"actor"} content={"name"} navigation = {navigation}></Caralouse>
         </ScrollView>
     )
 };

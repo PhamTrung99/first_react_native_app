@@ -17,7 +17,7 @@ export const ListItemContent = ({ iconName, title }) => {
 
 export default function ListMenu({ list, title, listItemName, listIconName, navigation}) {
 
-    const [isExpanded, setisExpanded] = useState(false)
+    const [isExpanded, setisExpanded] = useState(true)
 
     const handlePressAccordion = () => {
         setisExpanded(!isExpanded);

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './styles/app.style';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppHeader from './components/AppHeader/AppHeader';
 import BottomTabNaviga from './routes/BottomTab.Naviga';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+
 
 export default function App() {
 
@@ -16,7 +17,7 @@ export default function App() {
         </View>
         <View style={[styles.view_middle, { flex: 12.6 }]}>
           <NavigationContainer theme={DarkTheme}>
-              <BottomTabNaviga/> 
+            <BottomTabNaviga />
           </NavigationContainer>
         </View>
       </View>

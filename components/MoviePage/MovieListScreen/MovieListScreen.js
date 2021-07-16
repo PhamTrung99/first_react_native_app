@@ -20,7 +20,8 @@ export default function MovieListScreen({ route, navigation }) {
                 isText={true}
                 itemName={"movie"}
                 content={"title"}
-                genres_id={idGenres}></ListMovie>
+                genres_id={idGenres}
+                navigation={navigation}></ListMovie>
         </>
     )
 };

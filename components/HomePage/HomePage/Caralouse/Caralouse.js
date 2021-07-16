@@ -33,7 +33,8 @@ export default function Caralouse(props) {
                                     index={index}
                                     isText={props.isText}
                                     itemName={props.itemName}
-                                    content={props.content} >           
+                                    content={props.content} 
+                                    navigation={props.navigation}>           
                                 </SingleMovie>
                             </View>
                         )
